@@ -11,7 +11,6 @@ import javax.ws.rs.core.MediaType;
  * Session Bean implementation class Hello
  */
 @Stateless
-@Remote
 @Path("/EJB")
 public class Hello implements HelloRemote {
 
@@ -27,7 +26,7 @@ public class Hello implements HelloRemote {
     @Path("getEJB")
     public String getEJBWelcome() {
     	return "Hello from REST EJB";
-    }
+    }	
     
 	public String getWelcome() {
 		// TODO Auto-generated method stub

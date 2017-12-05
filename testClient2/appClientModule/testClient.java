@@ -31,10 +31,10 @@ public class testClient {
 				}
 				reader.close();*/
 		
-		InitialContext ctx = new InitialContext();
-		HelloRemote h = (HelloRemote) ctx.lookup("ejb:global/Test/TestEJB/Hello!" + test.HelloRemote.class.getName());
+		//InitialContext ctx = new InitialContext();
+		//HelloRemote h = (HelloRemote) ctx.lookup("ejb:global/Test/TestEJB/Hello!" + test.HelloRemote.class.getName());
 		
 		System.out.println("Rest - " + Client.create().resource("http://localhost:8080/Rest/rest/welcome/get").get(String.class));
-		System.out.println("EJB - " + h.getWelcome());
+		//System.out.println("EJB - " + h.getWelcome());
 	}
 }
