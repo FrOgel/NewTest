@@ -18,6 +18,7 @@ public class Hello implements HelloRemote {
 	public String getWelcome() {
 		// TODO Auto-generated method stub
 		return "Hallo vom EJB";
+		
 	}
 
     

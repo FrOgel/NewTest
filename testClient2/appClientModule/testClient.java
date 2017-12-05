@@ -1,6 +1,6 @@
 import java.io.IOException;
 import com.sun.jersey.api.client.Client;
-import javax.naming.NamingException;
+import javax.naming.*;
 
 
 public class testClient {
@@ -31,6 +31,10 @@ public class testClient {
 				}
 				reader.close();*/
 		
-		System.out.println(Client.create().resource("http://localhost:8080/Rest/rest/welcome/get").get(String.class));
+		InitialContext ctx = new InitialContext();
+		HelloRemote h = (HelloRemote) ctx.lookup("ejb:global/Test/TestEJB/Hello!" + test.HelloRemote.class.getName());
+		
+		System.out.println("Rest - " + Client.create().resource("http://localhost:8080/Rest/rest/welcome/get").get(String.class));
+		System.out.println("EJB - " + h.getWelcome());
 	}
 }
